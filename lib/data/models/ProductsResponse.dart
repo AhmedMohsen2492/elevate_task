@@ -1,5 +1,5 @@
 class ProductsResponse {
-  List<Product>? products ;
+  List<Product>? products;
 
   ProductsResponse(this.products);
 }
@@ -14,13 +14,14 @@ class Product {
   Rating? rating;
 
   Product({
-      this.id, 
-      this.title, 
-      this.price, 
-      this.description, 
-      this.category, 
-      this.image, 
-      this.rating,});
+    this.id,
+    this.title,
+    this.price,
+    this.description,
+    this.category,
+    this.image,
+    this.rating,
+  });
 
   Product.fromJson(dynamic json) {
     id = json['id'];
@@ -45,18 +46,19 @@ class Product {
     }
     return map;
   }
-
 }
 
 class Rating {
   Rating({
-      this.rate, 
-      this.count,});
+    this.rate,
+    this.count,
+  });
 
   Rating.fromJson(dynamic json) {
     rate = json['rate'];
     count = json['count'];
   }
+
   num? rate;
   num? count;
 
@@ -66,5 +68,4 @@ class Rating {
     map['count'] = count;
     return map;
   }
-
 }

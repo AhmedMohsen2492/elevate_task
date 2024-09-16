@@ -15,9 +15,7 @@ class ProductWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(8),
-      padding: EdgeInsets.only(
-        top: 8
-      ),
+      padding: const EdgeInsets.only(top: 8),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           border: Border.all(
@@ -51,21 +49,23 @@ class ProductWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
-                        "${products?[index].title}",
+                        "${products[index].title}",
                         overflow: TextOverflow.ellipsis,
                         maxLines: 1,
                         style: GoogleFonts.poppins(
-                            color: AppColors.primary, fontSize: 16,),
+                          color: AppColors.primary,
+                          fontSize: 16,
+                        ),
                       ),
                       Text(
-                        "${products?[index].description}",
+                        "${products[index].description}",
                         overflow: TextOverflow.ellipsis,
                         maxLines: 1,
                         style: GoogleFonts.poppins(
                             color: AppColors.primary, fontSize: 16),
                       ),
                       Text(
-                        "EGP ${products![index].price!}",
+                        "EGP ${products[index].price!}",
                         overflow: TextOverflow.ellipsis,
                         style: GoogleFonts.poppins(
                             color: AppColors.primary, fontSize: 14),
@@ -73,7 +73,7 @@ class ProductWidget extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            "Review (${products![index].rating?.rate})",
+                            "Review (${products[index].rating?.rate})",
                             style: GoogleFonts.poppins(
                                 color: AppColors.primary, fontSize: 14),
                           ),
@@ -95,15 +95,12 @@ class ProductWidget extends StatelessWidget {
               onPressed: () {},
               icon: Container(
                 decoration: BoxDecoration(
-                    color: AppColors.primary,
-                    borderRadius: BorderRadius.circular(6000),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey,
-                          blurRadius: 2,
-                          offset:  Offset(1, 2)
-                      )
-                    ],
+                  color: AppColors.primary,
+                  borderRadius: BorderRadius.circular(6000),
+                  boxShadow: const [
+                    BoxShadow(
+                        color: Colors.grey, blurRadius: 2, offset: Offset(1, 2))
+                  ],
                 ),
                 child: const Icon(
                   Icons.add_rounded,
@@ -119,16 +116,12 @@ class ProductWidget extends StatelessWidget {
               padding: const EdgeInsets.all(6),
               margin: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: AppColors.white,
-                borderRadius: BorderRadius.circular(5000),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey,
-                    blurRadius: 2,
-                    offset:  Offset(1, 2)
-                  )
-                ]
-              ),
+                  color: AppColors.white,
+                  borderRadius: BorderRadius.circular(5000),
+                  boxShadow: const [
+                    BoxShadow(
+                        color: Colors.grey, blurRadius: 2, offset: Offset(1, 2))
+                  ]),
               child: Image.asset(
                 AppAssets.favourite,
               ),

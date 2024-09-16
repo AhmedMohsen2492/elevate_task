@@ -8,6 +8,7 @@ import '../../utils/base_states.dart';
 
 class ProductsScreen extends StatefulWidget {
   const ProductsScreen({super.key});
+
   static const String routeName = "ProductsScreen";
 
   @override
@@ -29,37 +30,36 @@ class _ProductsScreenState extends State<ProductsScreen> {
       body: SafeArea(
         child: BlocBuilder(
           bloc: viewModel,
-            builder: (context, state) {
-              if (state is BaseLoadingState) {
-                return const Expanded(
-                  child: Center(
-                    child: CircularProgressIndicator(
-                      color: AppColors.primary,
-                    ),
+          builder: (context, state) {
+            if (state is BaseLoadingState) {
+              return const Expanded(
+                child: Center(
+                  child: CircularProgressIndicator(
+                    color: AppColors.primary,
                   ),
-                );
-              } else  if (state is BaseSuccessState) {
-                return GridView.builder(
-                  gridDelegate:
-                  const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2, childAspectRatio: 0.8),
-                  itemCount: state.productsResponse.products!.length,
-                  itemBuilder: (context, index) =>
-                      ProductWidget(state.productsResponse.products!, index),
-                );
-              } else {
-                return const Expanded(
-                  child: Center(
-                      child: Text(
-                        "No data found !!",
-                        style: TextStyle(
-                            color: AppColors.primary,
-                            fontSize: 28,
-                            fontWeight: FontWeight.w500),
-                      )),
-                );
-              }
-            },
+                ),
+              );
+            } else if (state is BaseSuccessState) {
+              return GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2, childAspectRatio: 0.8),
+                itemCount: state.productsResponse.products!.length,
+                itemBuilder: (context, index) =>
+                    ProductWidget(state.productsResponse.products!, index),
+              );
+            } else {
+              return const Expanded(
+                child: Center(
+                    child: Text(
+                  "No data found !!",
+                  style: TextStyle(
+                      color: AppColors.primary,
+                      fontSize: 28,
+                      fontWeight: FontWeight.w500),
+                )),
+              );
+            }
+          },
         ),
       ),
     );

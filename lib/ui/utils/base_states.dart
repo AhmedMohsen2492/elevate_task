@@ -5,7 +5,8 @@ class BaseInitialState {}
 class BaseLoadingState {}
 
 class BaseSuccessState {
-  ProductsResponse productsResponse ;
+  ProductsResponse productsResponse;
+
   BaseSuccessState(this.productsResponse);
 }
 

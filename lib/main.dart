@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
     productsRepo.getProducts();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-     initialRoute: ProductsScreen.routeName,
+      initialRoute: ProductsScreen.routeName,
       routes: {
-       ProductsScreen.routeName : (_)=> ProductsScreen(),
+        ProductsScreen.routeName: (_) => const ProductsScreen(),
       },
     );
   }

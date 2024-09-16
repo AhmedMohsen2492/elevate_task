@@ -6,8 +6,9 @@ import '../../../domain/useCases/productsUseCase/products_use_case.dart';
 import '../../utils/base_states.dart';
 
 @injectable
-class ProductsViewModel extends Cubit{
+class ProductsViewModel extends Cubit {
   ProductsUseCase productsUseCase;
+
   ProductsViewModel(this.productsUseCase) : super(BaseInitialState);
 
   void getProducts() async {
@@ -19,5 +20,4 @@ class ProductsViewModel extends Cubit{
       emit(BaseSuccessState(success));
     });
   }
-
 }
