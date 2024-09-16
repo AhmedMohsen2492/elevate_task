@@ -1,4 +1,10 @@
 class ProductsResponse {
+  List<Product>? products ;
+
+  ProductsResponse(this.products);
+}
+
+class Product {
   num? id;
   String? title;
   num? price;
@@ -7,7 +13,7 @@ class ProductsResponse {
   String? image;
   Rating? rating;
 
-  ProductsResponse({
+  Product({
       this.id, 
       this.title, 
       this.price, 
@@ -16,7 +22,7 @@ class ProductsResponse {
       this.image, 
       this.rating,});
 
-  ProductsResponse.fromJson(dynamic json) {
+  Product.fromJson(dynamic json) {
     id = json['id'];
     title = json['title'];
     price = json['price'];
