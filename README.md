@@ -7,4 +7,4 @@
 - Cubit 
 
 ## Screenshots
-<img src="screenshots/data.png" width="200" height="400" /> 
+<img src="screenshots/data.png" width="300" height="600" /> 
